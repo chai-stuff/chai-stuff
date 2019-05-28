@@ -1,13 +1,13 @@
 {
   "name": "chai-stuff",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Chai plugin with some (maybe useful to you!) assertions.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive **/test/*.test.js",
     "build": "rollup -c",
-    "prepublishOnly": "./prepare-lerna.sh",
-    "publish": "lerna publish"
+    "prepublishOnly": "npm run build && npm run test && ./prepare-lerna.sh",
+    "publish": "lerna bootstrap && lerna publish"
   },
   "repository": {
     "type": "git",

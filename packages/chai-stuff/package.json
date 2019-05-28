@@ -1,6 +1,6 @@
 {
   "name": "chai-stuff",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Chai plugin with some (maybe useful to you!) assertions.",
   "keywords": [
     "chai-stuff",
@@ -31,5 +31,11 @@
   },
   "bugs": {
     "url": "https://github.com/chai-stuff/chai-stuff/issues"
+  },
+  "dependences": {
+    "@chai-stuff/same-props": "1.0.0"
+  },
+  "peerDependencies": {
+    "chai": ">= 3.0.0"
   }
 }

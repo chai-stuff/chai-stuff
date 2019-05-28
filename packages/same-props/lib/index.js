@@ -23,7 +23,7 @@ const strictEqual = (actual, expected) => {
     throw new ChaiStuffError(`expected ${actual} to equal ${expected}`);
 };
 
-const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) => {
+const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) => (
   addMethod(assert, alias, (actual, expected) => {
     const _actual = {original: actual, converted: actual};
     const _expected = {original: expected, converted: expected};
@@ -67,8 +67,8 @@ const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) =
       err.expected = _expected.converted;
       throw err;
     }
-  });
-};
+  })
+);
 
 const sameProps = getSameProps();
 const getSamePropsAlias = alias => getSameProps(alias);
