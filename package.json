@@ -4,34 +4,21 @@
   "description": "Chai plugin with some (maybe useful to you!) assertions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublishOnly": "./prepare-lerna.sh",
+    "publish": "lerna publish"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chai-stuff/chai-stuff.git"
   },
-  "keywords": [
-    "chai-stuff",
-    "chai",
-    "plugin",
-    "chai-plugin",
-    "same-props",
-    "same",
-    "props",
-    "type",
-    "typeof",
-    "constructor",
-    "class",
-    "object",
-    "objects",
-    "array",
-    "arrays",
-    "properties"
-  ],
   "author": "Scott Rudiger (https://github.com/ScottRudiger)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chai-stuff/chai-stuff/issues"
   },
-  "homepage": "https://github.com/chai-stuff/chai-stuff#readme"
+  "homepage": "https://github.com/chai-stuff/chai-stuff#readme",
+  "devDependencies": {
+    "lerna": "^3.14.1"
+  }
 }
