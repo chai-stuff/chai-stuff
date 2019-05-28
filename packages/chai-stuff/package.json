@@ -1,0 +1,41 @@
+{
+  "name": "chai-stuff",
+  "version": "0.1.0",
+  "description": "Chai plugin with some (maybe useful to you!) assertions.",
+  "keywords": [
+    "chai-stuff",
+    "chai",
+    "plugin",
+    "plugins",
+    "chai-plugin",
+    "test",
+    "tests",
+    "helper",
+    "helpers",
+    "sameProps",
+    "same-props"
+  ],
+  "author": "ScottRudiger (https://github.com/ScottRudiger)",
+  "homepage": "https://github.com/chai-stuff/chai-stuff/tree/master/packages/chai-stuff#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chai-stuff/chai-stuff.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "bugs": {
+    "url": "https://github.com/chai-stuff/chai-stuff/issues"
+  },
+  "dependences": {
+    "@chai-stuff/same-props": "1.0.0"
+  },
+  "peerDependencies": {
+    "chai": ">= 3.0.0"
+  }
+}

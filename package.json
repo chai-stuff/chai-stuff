@@ -1,0 +1,35 @@
+{
+  "name": "chai-stuff",
+  "version": "0.1.0",
+  "description": "Chai plugin with some (maybe useful to you!) assertions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive **/test/*.test.js",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build && npm run test && ./prepare-lerna.sh",
+    "publish": "lerna bootstrap && lerna publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chai-stuff/chai-stuff.git"
+  },
+  "author": "Scott Rudiger (https://github.com/ScottRudiger)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chai-stuff/chai-stuff/issues"
+  },
+  "homepage": "https://github.com/chai-stuff/chai-stuff#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@scottrudiger/eslint-config": "^0.7.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.3",
+    "lerna": "^3.14.1",
+    "mocha": "^6.1.4",
+    "rollup": "^1.12.4",
+    "rollup-plugin-babel": "^4.3.2"
+  }
+}
