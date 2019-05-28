@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "build": "rollup -c",
     "prepublishOnly": "./prepare-lerna.sh",
     "publish": "lerna publish"
   },
@@ -19,9 +20,14 @@
   },
   "homepage": "https://github.com/chai-stuff/chai-stuff#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "@scottrudiger/eslint-config": "^0.7.1",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.17.3",
-    "lerna": "^3.14.1"
+    "lerna": "^3.14.1",
+    "rollup": "^1.12.4",
+    "rollup-plugin-babel": "^4.3.2"
   }
 }
