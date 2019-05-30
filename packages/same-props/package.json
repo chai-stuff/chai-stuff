@@ -48,6 +48,6 @@
     "url": "https://github.com/chai-stuff/chai-stuff/issues"
   },
   "peerDependencies": {
-    "chai": ">= 3.0.0"
+    "chai": ">= 1.0.0"
   }
 }

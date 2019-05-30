@@ -36,6 +36,6 @@
     "@chai-stuff/same-props": "1.0.0"
   },
   "peerDependencies": {
-    "chai": ">= 3.0.0"
+    "chai": ">= 1.0.0"
   }
 }

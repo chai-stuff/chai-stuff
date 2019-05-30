@@ -12,11 +12,11 @@ describe('should be available to chai', () => {
       chai2.use(chaiStuff);
     });
     it('sameProps', () => {
-      assert.exists(chai2.assert.sameProps);
+      assert.notEqual(chai2.assert.sameProps, undefined);
     });
     it('getSamePropsAlias', () => {
       chai2.use(chaiStuff.getSamePropsAlias('someAlias'));
-      assert.exists(chai2.assert.someAlias);
+      assert.notEqual(chai2.assert.someAlias, undefined);
     });
   }); /* eslint-enable global-require */
 });
