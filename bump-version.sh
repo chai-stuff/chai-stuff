@@ -36,7 +36,7 @@ updateVersion lerna
 cp README.md packages/chai-stuff
 
 git add .
-git commit -m "chore(release): bump version to $NEW_PACKAGE_VERSION"
+git commit -m "chore(release): Bump version to $NEW_PACKAGE_VERSION"
 
 npm version $1
 

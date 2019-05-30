@@ -16,12 +16,12 @@ describe('assert', () => {
     it('sameProps', () => {
       const chai2 = require('chai');
       chai2.use(sameProps);
-      assert.exists(chai2.assert.sameProps);
+      assert.notEqual(chai2.assert.sameProps, undefined);
     });
     it('using getSamePropsAlias', () => {
       const chai3 = require('chai');
       chai3.use(getSamePropsAlias('someAlias'));
-      assert.exists(chai3.assert.someAlias);
+      assert.notEqual(chai3.assert.someAlias, undefined);
     });
   });
 
