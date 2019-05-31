@@ -35,6 +35,15 @@ describe('assert', () => {
     chai6.assert.deepEqualNoConstructorCheck({}, {});
   }); /* eslint-enable global-require */
 
+  it('should set a custom message', () => {
+    const customMessage = 'the props aren\'t the same!';
+    try {
+      assert.sameProps({a: 1}, {a: 2}, customMessage);
+    } catch (err) {
+      assert.equal(err.message, customMessage);
+    }
+  });
+
   context('should work w/ objects:', () => {
     it('deeply equal native objects', () => {
       assert.sameProps({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3});
