@@ -24,7 +24,7 @@ const strictEqual = (actual, expected) => {
 };
 
 const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) => (
-  addMethod(assert, alias, (actual, expected) => {
+  addMethod(assert, alias, (actual, expected, message) => {
     const _actual = {original: actual, converted: actual};
     const _expected = {original: expected, converted: expected};
     try {
@@ -57,7 +57,7 @@ const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) =
         original && original.constructor && original.constructor.name || ''
       } ${inspect([Object, Array]
         .some(Class => converted.constructor === Class) ? converted : fillObj(converted))}`;
-      err.message = `expected ${
+      err.message = message || `expected ${
         prettify(_actual)
       } to have the same properties as ${
         prettify(_expected)

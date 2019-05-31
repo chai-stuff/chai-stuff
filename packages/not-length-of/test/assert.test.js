@@ -32,11 +32,20 @@ describe('notLengthOf', () => {
     it('should work w/ aliases', () => {
       const chai5 = require('chai');
       chai5.use(getNotLengthOfAlias('differentLength'));
-      chai5.assert.differentLength({}, {});
+      chai5.assert.differentLength({length: 1}, 2);
 
       const chai6 = require('chai');
       chai6.use(getNotLengthOfAlias('hasDifferentLength'));
-      chai6.assert.hasDifferentLength({}, {});
+      chai6.assert.hasDifferentLength({length: 1}, 2);
+    });
+
+    it('should set a custom message', () => {
+      const customMessage = 'the length is equal!';
+      try {
+        assert.notLengthOf({length: 1}, 1, customMessage);
+      } catch (err) {
+        assert.equal(err.message, customMessage);
+      }
     });
 
     it('should pass when object has a different length or size', () => {

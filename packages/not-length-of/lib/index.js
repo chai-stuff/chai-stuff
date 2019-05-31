@@ -1,5 +1,5 @@
 const getNotLengthOf = (alias = 'notLengthOf') => ({assert}, {addMethod, inspect}) => (
-  addMethod(assert, alias, (actual, expected) => {
+  addMethod(assert, alias, (actual, expected, message) => {
     let _actual = inspect(actual);
     try {
       assert.throws(() => assert.lengthOf(actual, expected));
@@ -9,7 +9,7 @@ const getNotLengthOf = (alias = 'notLengthOf') => ({assert}, {addMethod, inspect
           .replace(/^\[/, '{').replace(/\]$/, '}')}`;
       if (typeof actual === 'function')
         _actual = actual.toString();
-      err.message = `expected ${
+      err.message = message || `expected ${
         _actual
       } not to have a length of ${
         inspect(expected)
