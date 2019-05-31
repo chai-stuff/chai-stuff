@@ -1,6 +1,6 @@
 {
   "name": "@chai-stuff/same-props",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Check that two objects have all the same properties (keys and values) but don't check that the objects' constructors are the same.",
   "keywords": [
     "chai-stuff",
