@@ -1,0 +1,39 @@
+{
+  "name": "@chai-stuff/not-length-of",
+  "version": "0.1.1",
+  "description": "Check that an object does not have a length or size property with the expected value.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chai-stuff/chai-stuff.git"
+  },
+  "keywords": [
+    "chai-stuff",
+    "chai",
+    "plugin",
+    "chai-plugin",
+    "lengthOf",
+    "notLengthOf",
+    "length-of",
+    "not-length-of",
+    "object",
+    "array",
+    "map",
+    "set"
+  ],
+  "author": "ScottRudiger (https://github.com/ScottRudiger)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chai-stuff/chai-stuff/issues"
+  },
+  "homepage": "https://github.com/chai-stuff/chai-stuff#readme",
+  "peerDependencies": {
+    "chai": ">= 1.0.0"
+  }
+}
