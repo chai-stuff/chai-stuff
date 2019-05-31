@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "chai-stuff",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Chai plugin with some (maybe useful to you!) assertions.",
   "main": "index.js",
   "scripts": {
