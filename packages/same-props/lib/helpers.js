@@ -1,9 +1,9 @@
 class ChaiStuffError extends Error {}
 
-const fillObj = nonObj => Reflect.ownKeys(nonObj).reduce((obj, key) => ({
-  ...obj,
-  [key]: nonObj[key],
-}), {});
+const fillObj = nonObj => [
+  ...Object.getOwnPropertyNames(nonObj),
+  ...Object.getOwnPropertySymbols(nonObj),
+].reduce((obj, key) => ({...obj, [key]: nonObj[key]}), {});
 
 const getOwnSortedPropertyNames = obj => Object.getOwnPropertyNames(obj).sort();
 
