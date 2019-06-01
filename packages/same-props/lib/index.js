@@ -1,27 +1,10 @@
-class ChaiStuffError extends Error {}
-
-const fillObj = nonObj => Reflect.ownKeys(nonObj).reduce((obj, key) => ({
-  ...obj,
-  [key]: nonObj[key],
-}), {});
-
-const types = new Map([
-  [Map, map => [...map].reduce((obj, [key, val]) => ({
-    ...obj,
-    [key]: val,
-  }), {})],
-  [Set, set => [...set]],
-  [WeakMap, () => { throw new ChaiStuffError('WeakMaps cannot be compared'); }],
-  [WeakSet, () => { throw new ChaiStuffError('WeakSets cannot be compared'); }],
-  [Number, num => ({Number: +num, ...num})],
-  [String, str => fillObj(str)],
-  [Boolean, bool => ({Boolean: bool.valueOf(), ...bool})],
-]);
-
-const strictEqual = (actual, expected) => {
-  if (actual !== expected)
-    throw new ChaiStuffError(`expected ${actual} to equal ${expected}`);
-};
+import {
+  ChaiStuffError,
+  fillObj,
+  getOwnSortedPropertyNames,
+  strictEqual,
+  types,
+} from './helpers';
 
 const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) => (
   addMethod(assert, alias, (actual, expected, message) => {
@@ -46,8 +29,8 @@ const getSameProps = (alias = 'sameProps') => ({assert}, {addMethod, inspect}) =
         _expected.converted = types.get(expected.constructor)(expected);
       else if (expected[Symbol.iterator])
         _expected.converted = [...expected];
-      const actualKeys = Object.getOwnPropertyNames(_actual.converted);
-      assert.deepEqual(actualKeys, Object.getOwnPropertyNames(_expected.converted));
+      const actualKeys = getOwnSortedPropertyNames(_actual.converted);
+      assert.deepEqual(actualKeys, getOwnSortedPropertyNames(_expected.converted));
       assert.isTrue(
         actualKeys.every(key => _actual.converted[key] === _expected.converted[key]),
       );
