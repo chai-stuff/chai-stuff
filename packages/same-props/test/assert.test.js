@@ -170,6 +170,20 @@ describe('assert', () => {
     }); /* eslint-enable no-new-wrappers */
   });
 
+  it('should not depend on order of props', () => {
+    assert.sameProps(
+      {c: null, b: null, a: null, 3: null, 2: null, 1: null},
+      {a: null, b: null, c: null, 1: null, 2: null, 3: null},
+    );
+  });
+
+  it('should not pass just because objects have the same number of props', () => {
+    assert.throw(() => assert.sameProps(
+      {a: undefined, b: undefined, c: undefined},
+      {d: undefined, e: undefined, f: undefined},
+    ));
+  });
+
   context('should not work w/ objects:', () => {
     it('WeakMaps', () => {
       assert.throws(() => assert.sameProps(new WeakMap([[{}, 1]]), new WeakMap([[{}, 1]])));
