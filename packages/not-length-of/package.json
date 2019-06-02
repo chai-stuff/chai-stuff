@@ -1,6 +1,6 @@
 {
   "name": "@chai-stuff/not-length-of",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Check that an object does not have a length or size property with the expected value.",
   "main": "dist/index.js",
   "files": [
