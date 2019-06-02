@@ -1,5 +1,5 @@
-import {notLengthOf, getNotLengthOfAlias} from '../../not-length-of/lib/index';
-import {sameProps, getSamePropsAlias} from '../../same-props/lib/index';
+const {notLengthOf, getNotLengthOfAlias} = require('@chai-stuff/not-length-of');
+const {sameProps, getSamePropsAlias} = require('@chai-stuff/same-props');
 
 const chaiStuff = (chai, utils) => {
   notLengthOf(chai, utils);
