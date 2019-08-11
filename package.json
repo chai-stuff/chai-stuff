@@ -9,7 +9,8 @@
     "build": "rollup -c",
     "prebumpVersion": "npm run build && npm test",
     "bumpVersion": "chmod +x ./bump-version.sh && ./bump-version.sh",
-    "release": "lerna exec -- npm publish"
+    "release": "lerna exec -- npm publish",
+    "postinstall": "lerna exec -- npm install"
   },
   "repository": {
     "type": "git",
